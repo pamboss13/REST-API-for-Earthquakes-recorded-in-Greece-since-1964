@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<!-- <title>Earthquake API</title> -->
+	<link rel="shortcut icon" href="#">
+	<link rel="stylesheet" href="custom.css">
+	 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+   		integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+   		crossorigin=""/>
+	<script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+<header>
+<h2>Earthquakes Recorded in Greece: REST API</h2>
+</header>
+
+
+<p><a href="http://localhost:8080/swagger-ui/index.html" target="_blank">Go to Swagger to try out REST API Methods</a></p>
+
+ <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+   integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+   crossorigin="">
+ </script>
+   
+<div class="out">
+	<div class="a" id="box">
+	
+		<label for="city">City:</label>
+		
+		<select name="cities" id="city" onChange="getMarker(this)" autocomplete="off">
+			<option value="" selected>--Please choose an option--</option>
+			<option value="Athens">Athens</option>
+			<option value = "Piraeus">Piraeus</option>
+			<option value="Thessaloniki">Thessaloniki</option>
+			<option value = "Argos">Argos</option>
+			<option value="Heraklion">Heraklion</option>
+			<option value = "Rethymno">Rethymno</option>
+			<option value="Chania">Chania</option>
+			<option value="Agios Nikolaos">Agios Nikolaos</option>
+			<option value="Ioannina">Ioannina</option>
+			<option value = "Rhodes">Rhodes</option>
+			<option value = "Larissa">Larissa</option>
+			<option value = "Volos">Volos</option>
+			<option value = "Kws">Kws</option>
+			<option value = "Sparta">Sparta</option>
+			<option value = "Kalamata">Kalamata</option>
+			<option value = "Patra">Patra</option>
+			<option value = "Pyrgos">Pyrgos</option>
+			<option value = "Mesologgi">Mesologgi</option>
+			<option value = "Kerkyra">Kerkyra</option>
+			<option value = "Alexandroupoli">Alexandroupoli</option>
+			<option value = "Komotini">Komotini</option>
+			<option value = "Xanthi">Xanthi</option>
+			<option value = "Kavala">Kavala</option>
+			<option value = "Serres">Serres</option>
+			<option value = "Kozani">Kozani</option>
+			<option value = "Karditsa">Karditsa</option>
+			<option value = "Preveza">Preveza</option>
+			<option value = "Kastoria">Kastoria</option>
+			<option value = "Mytilini">Mytilini</option>
+			<option value = "Chios">Chios</option>
+			<option value = "Salamina">Salamina</option>
+			<option value = "Nafplio">Nafplio</option>
+			<option value = "Mykonos">Mykonos</option>
+			
+		</select>
+	
+	</div>
+	
+	<div class="f" id="f">
+	
+		<label for="magnitude">Magnitude:</label>
+		
+		<select name="magnitudes" id="magnitude" onChange="getMagnitude(this)" autocomplete="off">
+			<option value="" selected>--Please choose an option--</option>
+			<option value="0">0-1</option>
+			<option value="1">1-2</option>
+			<option value = "2">2-3</option>
+			<option value="3">3-4</option>
+			<option value = "4">4-5</option>
+			<option value="5">5+</option>
+			
+		</select>
+	
+	</div>
+	
+	
+	<div class ="b" id="years">
+	<label for="year">Year:</label>
+		
+		<input type="text" id="year">
+		
+	</div>
+	
+	<div class="c" id="sub">
+	<input type="submit" value="Submit" onclick="UpdateYear()">
+	<p id="demo" ></p>
+	</div>
+	
+	<div class="d" id="clear">
+	<input type="submit" value="Clear Markers" onclick="ClearMarkers()">
+	<!-- <p id="demo2" ></p> -->
+	</div>
+	
+	<div class="e" id="colors">
+	<p id="demo2" ></p>
+	</div>
+</div>
+
+<div class="repcolors">
+<h4>Magnitude representational colors:</h4>
+	<div class="g">
+	<h3>0-1</h3>
+	</div>
+	<div class="y">
+	<h3>1-2</h3>
+	</div>
+	<div class="yel">
+	<h3>2-3</h3>
+	</div>
+	<div class="yellow">
+	<h3>3-4</h3>
+	</div>
+	<div class="orange">
+	<h3>4-5</h3>
+	</div>
+	<div class="r">
+	<h3>5+</h3>
+	</div>
+</div>
+
+
+<div id="EQMap">
+</div>
+<p>Earthquake Chart of submitted Query</p>
+
+<!-- <div class="sveg">
+	
+</div> -->
+
+<svg class="d33" id="d33">
+</svg>
+
+<p id="demo3"></p>
+<p id="demo4"></p>
+<p id="demo5"></p>
+<p id="demo6"></p>
+<p id="demo7"></p>
+<p id="demo8"></p>
+<p id="demo9"></p>
+
+<div class="rm">
+<p>Please clear chart before submiting a new query!!!</p>
+
+<input type="submit" value="Clear Chart" onclick="deleteChart()">
+</div>
+
+<script src="functions.js">
+</script>
+
+</body>
+</html>

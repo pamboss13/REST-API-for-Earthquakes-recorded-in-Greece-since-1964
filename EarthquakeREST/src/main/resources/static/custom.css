@@ -1,0 +1,150 @@
+@charset "ISO-8859-1";
+
+html, body {
+
+  margin: auto;
+  text-align: center;
+  background-color: #80ffff;
+  overflow:auto;
+  
+}
+header h2 {
+  font-size: 50px;
+  font-weight: 400;
+  background-image: linear-gradient(to left, #553c9a, #b393d3);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: conic-gradient(#553c9a, #ee4b2b, #00c2cb);
+}
+
+.footer p {
+  font-size:12px;
+  margin-bottom: 0;
+  margin-left: 20px;
+}
+#EQMap { 
+			margin:auto;
+			padding: auto;
+			
+			height: 650px;
+			width: 800px;
+			border-style: groove;
+			display: inline-block;
+			
+		 }
+div.out{
+	resize: both;
+  	overflow: auto;
+  	display: inline-block;
+	height: 250px;
+	width: 350px;
+	border-style: groove;
+	position: fixed;
+	right: 10px;
+	top:176px;
+	background-color: #349ce4;
+}
+div.a{
+	position: absolute;
+  	right: 10;
+  	
+}
+div.b{
+	position: absolute;
+  	right: 10;
+  	top:40px;
+  	
+}
+
+div.c{
+	
+	position: absolute;
+  	right: 150px;
+  	top: 150px;
+}
+
+div.d{
+	position: absolute;
+    right: 130px;
+    top: 200px;
+}
+div.e{
+	position: absolute;
+    right: 174px;
+    top: 600px;
+}
+div.f{
+	position: absolute;
+  	right: 10;
+  	top: 100px;
+  	
+}
+
+div.repcolors{
+	resize: both;
+  	overflow: auto;
+  	display: inline-block;
+	height: 290px;
+	width: 250px;
+	border-style: groove;
+	position: fixed;
+	right: 90px;
+	top:535px;
+	background-color: white;
+}
+div.g{
+	/* color: #ADF46E; */
+	background-color: #ADF46E;
+}
+div.y{
+	background-color: #DBF471;
+}
+div.yel{
+	background-color: #F0CD6A;
+}
+div.yellow{
+	background-color: #EFB366;
+}
+div.orange{
+	background-color: #F28E63;
+}
+div.r{
+	background-color: #F2625F;
+}
+
+div.sveg{
+	position: static;
+	margin: auto;
+	padding: auto;
+	right:10px;
+	height: 600px;
+	width: 800px;
+	border-style: groove;
+	background-color: white;
+}
+/* svg.d3{
+	position: static;
+	margin: auto;
+	top:50px;
+	right:50px;
+} */
+
+div.rm{
+	position :static;
+	top:900px;
+}
+
+text{
+	font-size:15px;
+	font-weight:bold;
+	fill:black;
+}
+/* svg.d3{
+	position: absolute;
+	top:900px;
+	right:0;
+	border-style: groove;
+	
+} */
+
